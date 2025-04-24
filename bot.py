@@ -13,11 +13,11 @@ HEADERS = {
 }
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Привет! Напиши /товар [название] чтобы узнать наличие и цену.")
+    await update.message.reply_text("Привет! Напиши /product [название] чтобы узнать наличие и цену.")
 
 async def product(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
-        await update.message.reply_text("Укажи название товара. Пример: /товар iPhone")
+        await update.message.reply_text("Укажи название товара. Пример: /product iPhone")
         return
 
     query = " ".join(context.args)
@@ -39,6 +39,6 @@ async def product(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 app = ApplicationBuilder().token(TOKEN).build()
 app.add_handler(CommandHandler("start", start))
-app.add_handler(CommandHandler("товар", product))
+app.add_handler(CommandHandler("product", product))
 
 app.run_polling()
