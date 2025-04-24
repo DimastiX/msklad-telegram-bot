@@ -1,1 +1,3 @@
-# msklad-telegram-bot
+# Новый старт для msklad-telegram-bot
+
+Проект очищен и готов к загрузке нового кода.
